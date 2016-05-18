@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/book_club_picks'
+
+BookClubPicks::CLI.new.call

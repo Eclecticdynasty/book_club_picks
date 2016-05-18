@@ -1,5 +1,8 @@
-require "book_club_picks/version"
+require 'pry'
+require 'nokogiri'
+require 'open-uri'
 
-module BookClubPicks
-  # Your code goes here...
-end
+require_relative 'book_club_picks/version.rb'
+require_relative 'book_club_picks/cli.rb'
+
+
