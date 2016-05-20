@@ -2,39 +2,31 @@ class BookClubPicks::Book
 
   attr_accessor :name, :author, :published, :clubs, :summary
 
-  def self.today
-    # scrape Book Movement and return the list of popular books 
-    puts <<-DOC
-    1. Title 1
-    2. Title 2
-    3. Title 3
-    4. Title 4
-    5. Title 5
-    DOC
-    self.scrape.books
+  def initialize(name = nil, author = nil, published = nil, clubs = nil, summary = nil)
+    @name = name
+    @author = author
+    @published = published
+    @clubs = clubs
+    @summary = summary
+    @@all << self
   end
 
-    #book_1 = self.new
-    #book_1.name = "first book on list"
-    #book_1.author = "author's name"
-    #book_1.published = "copyright date"
-    #book_1.clubs = "number of clubs reading it now"
-    #book_1.summary = "summary"
-  
-
-  def self.scrape_books
-    books = []
-
-    books << self.scrape_book_movement
-    #Go to Book Movement, find the books
-    #Extract the properties
-    #Instantiate a book
-
-    books
+  def self.details
+    self.scrape_book_info
   end
 
-  def self.scrape_book_movement
+  def self.scrape_book_info
     doc = Nokogiri::HTML(open("http://www.bookmovement.com/topClubPicks"))
-    binding.pry
+    #binding.pry
+    individual_details = []
+
+    doc.search("div.midd").each do |book|
+      individual_details << {
+      :name => book.search("h2").text,
+      :published => book.search("div.midd .omatter").text
+    }
+    end
+    individual_details
   end
+  
 end
