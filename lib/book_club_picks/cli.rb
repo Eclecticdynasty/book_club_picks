@@ -37,8 +37,7 @@ class BookClubPicks::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        puts "#{book_details.name}"
-        puts "#{book_details.published}"
+        puts BookClubPicks::Book.details
       elsif input == "exit"
         goodbye 
       end

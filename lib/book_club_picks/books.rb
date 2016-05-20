@@ -18,15 +18,18 @@ class BookClubPicks::Book
   def self.scrape_book_info
     doc = Nokogiri::HTML(open("http://www.bookmovement.com/topClubPicks"))
     #binding.pry
-    individual_details = []
+    individual_details = {}
 
     doc.search("div.midd").each do |book|
-      individual_details << {
-      :name => book.search("h2").text,
-      :published => book.search("div.midd .omatter").text
+      individual_details = {
+      :name => doc.css("h2").text,
+      #:author => doc.css(".midd").text,
+      :published => doc.search("div.midd .omatter").text,
+      :clubs => doc.css(".recomnd").text,
+      :summary => doc.css(".midd .statement").text
     }
     end
-    individual_details
+    individual_details.values
   end
   
 end
