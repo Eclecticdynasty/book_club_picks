@@ -82,8 +82,7 @@ class BookClubPicks::CLI
         end 
       elsif input == "exit"
         goodbye 
-      
-    end
+      end
     end
   end
 
@@ -95,9 +94,11 @@ class BookClubPicks::CLI
     puts "#{@individual_details.published}"
     puts ""
     puts "------------------------------"
+    puts ""
     puts "#{@individual_details.clubs}"
     puts ""
     puts "------------------------------"
+    puts ""
     puts "#{@individual_details.summary}"
     puts ""
     puts "------------------------------"
