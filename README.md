@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This gem will give you the hottest recommendations for your book club's next book.  Simply type the number of the top 10 book that you would like to learn more about.  You can keep entering numbers for as many books as you would like to browse.  When finished, type exit to leave the program.
 
 ## Development
 
