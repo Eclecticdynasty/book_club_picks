@@ -1,8 +1,6 @@
 # BookClubPicks
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/book_club_picks`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to book club picks!  This gem will help you find the next best book for your club to read.  Browse popular titles from the bookmovement.com website.  You can see the current top ten list and read more about each title.  Follow the directions below to get started.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-This gem will give you the hottest recommendations for your book club's next book.  Simply type the number of the top 10 book that you would like to learn more about.  You can keep entering numbers for as many books as you would like to browse.  When finished, type exit to leave the program.
+ Simply type the number of the top 10 book that you would like to learn more about.  You can keep entering numbers for as many books as you would like to browse.  When finished, type exit to leave the program.
 
 ## Development
 
