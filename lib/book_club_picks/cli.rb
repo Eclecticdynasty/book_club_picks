@@ -7,10 +7,10 @@ class BookClubPicks::CLI
     puts ""
     puts "------------------------------"
     puts ""
-    book_range
+    top_ten
   end
 
-  def book_range
+  def top_ten
     puts "Here are this week's top 10 books."
     puts "They are ranked in order of their current popularity on the Book Movement website."
     puts ""
@@ -101,8 +101,7 @@ class BookClubPicks::CLI
     puts ""
     puts "#{@individual_details.summary}"
     puts ""
-    puts "------------------------------"
-   
+    puts "------------------------------" 
   end
 
   def goodbye
@@ -114,5 +113,4 @@ class BookClubPicks::CLI
     puts "------------------------------"
     puts ""
   end
-
 end
