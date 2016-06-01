@@ -16,7 +16,7 @@ class BookClubPicks::CLI
     puts ""
     puts "------------------------------"
     puts ""
-    BookClubPicks::Scraper.today
+    puts_books
     puts ""
     puts "------------------------------"
     puts ""
@@ -27,6 +27,13 @@ class BookClubPicks::CLI
     puts "------------------------------"
     puts ""
     menu
+  end
+
+  def puts_books
+    current_books = BookClubPicks::Scraper.today
+    current_books.each_with_index do |book, index|
+      puts "#{index+1}. #{book}"
+    end
   end
 
   def menu
@@ -41,43 +48,43 @@ class BookClubPicks::CLI
         case input
         when "1"
         puts ""
-        @individual_details = BookClubPicks::Book.scrape_details_1   
+        @individual_details = BookClubPicks::Book.scrape_details(0)
         book_details
         when "2"
         puts ""
-        @individual_details = BookClubPicks::Book.scrape_details_2   
+        @individual_details = BookClubPicks::Book.scrape_details(1)   
         book_details
         when "3"
         puts ""
-        @individual_details = BookClubPicks::Book.scrape_details_3   
+        @individual_details = BookClubPicks::Book.scrape_details(2)   
         book_details
         when "4"
         puts ""
-        @individual_details = BookClubPicks::Book.scrape_details_4   
+        @individual_details = BookClubPicks::Book.scrape_details(3)   
         book_details
         when "5"
         puts ""
-        @individual_details = BookClubPicks::Book.scrape_details_5   
+        @individual_details = BookClubPicks::Book.scrape_details(4)   
         book_details
         when "6"
         puts ""
-        @individual_details = BookClubPicks::Book.scrape_details_6   
+        @individual_details = BookClubPicks::Book.scrape_details(5)  
         book_details
         when "7"
         puts ""
-        @individual_details = BookClubPicks::Book.scrape_details_7   
+        @individual_details = BookClubPicks::Book.scrape_details(6)   
         book_details
         when "8"
         puts ""
-        @individual_details = BookClubPicks::Book.scrape_details_8   
+        @individual_details = BookClubPicks::Book.scrape_details(7)   
         book_details
         when "9"
         puts ""
-        @individual_details = BookClubPicks::Book.scrape_details_9   
+        @individual_details = BookClubPicks::Book.scrape_details(8)   
         book_details
         when "10"
         puts ""
-        @individual_details = BookClubPicks::Book.scrape_details_ten   
+        @individual_details = BookClubPicks::Book.scrape_details(9)   
         book_details
         end 
       elsif input == "exit"
