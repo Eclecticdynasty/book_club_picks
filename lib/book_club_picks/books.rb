@@ -1,4 +1,4 @@
-class BookClubPicks::Book
+  class BookClubPicks::Book
 
   attr_accessor :name, :author, :published, :clubs, :summary
   
